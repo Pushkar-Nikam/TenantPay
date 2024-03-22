@@ -1,0 +1,188 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="forgotpw.php" method="post" onsubmit=" return valid()">
+    Enter the name:-<input type =text name="n1"  id="n"><br>
+    Enter the register mobile number:-<input type="number" name="n2" id="m"><br>
+    Enter the Email-Id:-<input type="text" name="em" id="em"> <br>
+    Enter the new password:-<input type="text" name="p" id="pw" placeholder="eg:-rAm@#245"> <br>
+      
+    <script>
+        function valid() 
+          {  
+            let  a=document.getElementById("em").value;
+            let  b=document.getElementById("pw").value;
+            
+            const re=new RegExp("^[a-zA-Z0-9][a-zA-Z0-9]{7,}$");
+           
+            const re1=new RegExp("^[a-zA-Z][a-zA-Z0-9/@/#/$/&/*]{7,}$");
+            const re2=new RegExp("[*/@/$/&/*/#]{1,}");
+            const re3=new RegExp("[0-9]{1,}");
+            const re4=new RegExp("[A-Z]{1,}");
+            const re5=new RegExp("[a-z]{1,}");
+            if(re.test(a) && re1.test(b) && re2.test(b) && re3.test(b)&& re4.test(b)&& re5.test(b))
+            {
+              return(true);    
+            }
+            else
+            {
+             window.alert("Invalid password Formate!!"+ a+""+ b);
+             return(false);
+            }
+          }    
+  </script> 
+    <input type="submit" value="submit"> 
+</form>
+</body>
+</html>
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant</title>
+  
+</head>
+<body style="display:flex; align-items:center; justify-content:center;">
+<div class="login-page">
+  <div class="form">
+   
+    <form action="forgotpwemail.php" class="login-form" method="post"  onsubmit=" return valid()">
+      <style id="image">
+        body {
+          background-image: url('bg1.jpg');
+        }
+        </style>
+      <h2></i><span style="color: greenyellow;">Forgot Password !</span></h2>
+      <input type="text" placeholder="Name" name="n1" id="n" required />
+      
+      <input type="number" placeholder="Mobile Number" name="n2" id="m" required />
+      <input type="email" placeholder="Username (Email-id)" name="em" id="em" required />
+      
+      <script>
+        function valid() 
+          {  
+            let  a=document.getElementById("em").value;
+        
+            
+            const re=new RegExp("^[a-zA-Z0-9][a-zA-Z0-9/@/#/$/&/*/.]{7,}$");
+           
+            if(re.test(a))
+            {
+              return(true);    
+            }
+            else
+            {
+             window.alert("Invalid username password!!"+ a);
+             return(false);
+            }
+          }    
+      </script>
+       <input type="reset" class="btn" value="Clear" >
+      <input type="submit" value="SUBMIT" class="btn" >
+    </form>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/main.js"></script>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Poppins:300);
+html {
+ height: 100%;
+}
+body{
+ margin:0;
+ padding:0;
+ font-family: sans-serif;
+ background: linear-gradient(#30142b, #2772a1);
+}
+.login-page {
+  width: 400px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+.form input {
+ width: 100%;
+ padding: 10px 0;
+ font-size: 13px;
+ color: #fff;
+ margin-bottom: 30px;
+ border: none;
+ border-bottom: 1px solid #fff;
+ outline: none;
+ background: transparent;
+  
+}
+h2{
+ color:white;
+}
+
+
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #289bb8;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #1eb62b;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 15px;
+  letter-spacing: 2px
+}
+.btn:hover {
+  background: #289bb8;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #289bb8,
+              0 0 25px #289bb8,
+              0 0 50px #289bb8,
+              0 0 100px #289bb8;
+}
+
+.btn span {
+  position: absolute;
+  display: block;
+}
+
+</style>
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body style="display:flex; align-items:center; justify-content:center;">
+<div class="login-page">
+  <div class="form">
+    <form class="register-form" method="POST">
+      <h2>Register</h2>
+      <input type="text" placeholder="Full Name *" required/>
+      <input type="text" placeholder="Username *" required/>
+      <input type="email" placeholder="Email *" required/>
+      <input type="text" placeholder="Password *" required/>
+      <a class="btn" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Create
+      </a>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form> 
+
+    <form action="Login.php" class="login-form" method="post">
+        <style id="image">
+            body {
+              background-color:color-mix(in srgb, blue 30%, yellowgreen 70%);
+              background-image: url('bg1.jpg');
+            }
+            </style>
+      <h2></i><span style="color: greenyellow;">TENANTS PAY </span>WITH 0% BROKERAGE</h2>
+      <input class="underline" type="email" placeholder="Username (Email-id)" name="Username" id="us" required />
+      <input class="underline" type="password" placeholder="Password(eg- RaM@12)"   name="password" id="pw"  required/>
+      <h3 style="color: beige;font-family: sans-serif;
+      font-size:100% ">Enter the role 
+      <select name="role" style="padding: 10px 10px; border-radius:13px;">
+        <option value="Owner_ID">Owner</option>
+        <option value="Tenet_ID">Tenant</option>
+      </select></h3>
+      <input type="submit" class="btn" value="Log in " name="su" href="#"><br>
+     
+    <a class="message" href="forgotpw.html"><span style="color: beige;">Forgot Password</span></a><br><br><br>
+     <a class="message" href="signup.html"><span style="color: antiquewhite; font-size: 15px; "  >SIGN-UP</span></a>
+    </form>
+   <!-- <form action="signup.html" method="post" target="_blank"> -->
+        <!-- <input class="message" type="submit" href="" value="Create an account"> -->
+    <!-- </form> -->
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,290 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+</head>
+<body>
+    <H3> New Registration</h3>
+    <form  action="signup.php" method="post" onsubmit="return valid()">
+       Enter Name:-<input type="text" name="n1"><br>
+       Enter mobile number:-<input type="number" name="m"><br>
+       Enter the Email-Id:-<input type="text" name="em" id="em"> <br>
+       Enter the  Password:-<input type="text" name="p" id="pw"> <br>
+       Enter the Address:-<input type="text" name="a"> <br>
+       Enter the  Role:-
+       <select name="role" > 
+                        <option value="Owner">Owner</option>
+                        <option value="Tenet">Tenet</option>             
+                    </select><br><br>
+
+       <input type=submit value=Submit >
+       </form>
+        <script>
+        function valid() 
+          {  
+            let  a=document.getElementById("em").value;
+            let  b=document.getElementById("pw").value;
+            
+            const re=new RegExp("^[a-zA-Z0-9][a-zA-Z0-9]{7,}$");
+           
+            const re1=new RegExp("^[a-zA-Z][a-zA-Z0-9/@/#/$/&/*]{7,}$");
+            const re2=new RegExp("[*/@/$/&/*/#]{1,}");
+            const re3=new RegExp("[0-9]{1,}");
+            const re4=new RegExp("[A-Z]{1,}");
+            const re5=new RegExp("[a-z]{1,}");
+            if(re.test(a) && re1.test(b) && re2.test(b) && re3.test(b)&& re4.test(b)&& re5.test(b))
+            {
+              return(true);    
+            }
+            else
+            {
+             window.alert("Invalid username password!!"+ a+""+ b);
+             return(false);
+            }
+          }    
+  </script> 
+</body>
+</html>
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant</title>
+    
+</head>
+<body style="display:flex; align-items:center; justify-content:center;">
+<div class="login-page">
+  <div class="form">
+
+
+    <form action="signup.php" class="login-form" method="post" enctype="multipart/form-data" onsubmit="return valid()" >
+      
+      <h2></i>New Registration !</h2>
+      <input class="underline" type="text" placeholder="Name" name="n1" id="n1"  required/>
+      <input class="underline" type="number" placeholder="Mobile Number" name="m" required />
+      <input class="underline" type="text" placeholder="Username (Email-id)"  name="em" id="em" required />
+      <input class="underline" type="password" placeholder="Password" name="p" id="pw"  required/>
+      <input class="underline" type="text" placeholder="Address"  name="a" required />
+      <div style="color: aliceblue;">Profile Photo (less than 500kb):-</div>
+     <input class="underline" type="file" placeholder="Photo"  name="photo" required />
+      <h3 style="color: beige;font-family: sans-serif;
+      font-size:100% ">Enter the role <select name="role" style="padding: 10px 10px;
+      border-radius:13px;" class="btn">
+        <option value="Owner">Owner</option>
+        <option value="Tenet">Tenant</option>
+      </select></h3>
+      <input type="reset" class="btn" value="Clear" >
+      <input type="submit" class="btn" value="Submit " ><br>
+     
+
+    </form>
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/main.js"></script>
+<style>
+
+    @import url(https://fonts.googleapis.com/css?family=Poppins:300);
+    html {
+     height: 100%;
+    }
+    body{
+     margin:0;
+     padding:0;
+     font-family: sans-serif;
+     background: linear-gradient(#30142b, #2772a1);
+    }
+    .login-page {
+      width: 400px;
+      padding: 8% 0 0;
+      margin: auto;
+    }
+    .form {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      padding: 40px;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,.5);
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px rgba(0,0,0,.6);
+      border-radius: 10px;
+    }
+    .form input {
+     width: 100%;
+     padding: 10px 0;
+     font-size: 13px;
+     color: #fff;
+     margin-bottom: 30px;
+     border: none;
+     border-bottom: 1px solid #fff;
+     outline: none;
+     background: transparent;
+      
+    }
+    h2{
+     color:white;
+    }
+    
+    
+    .form .message {
+      margin: 15px 0 0;
+      color: #b3b3b3;
+      font-size: 12px;
+    }
+    .form .message a {
+      color: #289bb8;
+      text-decoration: none;
+    }
+    .form .register-form {
+      display: none;
+    }
+    .btn {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #289bb8;
+      font-size: 16px;
+      text-decoration: none;
+      overflow: hidden;
+      transition: .5s;
+      margin-top: 15px;
+      letter-spacing: 2px
+    }
+    .btn:hover {
+      background: #289bb8;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #289bb8,
+                  0 0 25px #289bb8,
+                  0 0 50px #289bb8,
+                  0 0 100px #289bb8;
+    }
+    
+    .btn span {
+      position: absolute;
+      display: block;
+    }
+    
+    .btn span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #289bb8);
+      animation: btn-anim1 1s linear infinite;
+    }
+    
+    @keyframes btn-anim1 {
+      0% {
+        left: -100%;
+      }
+      50%,100% {
+        left: 100%;
+      }
+    }
+    
+    .btn span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #289bb8);
+      animation: btn-anim2 1s linear infinite;
+      animation-delay: .25s
+    }
+    
+    @keyframes btn-anim2 {
+      0% {
+        top: -100%;
+      }
+      50%,100% {
+        top: 100%;
+      }
+    }
+    
+    .btn span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, #289bb8);
+      animation: btn-anim3 1s linear infinite;
+      animation-delay: .5s
+    }
+    
+    @keyframes btn-anim3 {
+      0% {
+        right: -100%;
+      }
+      50%,100% {
+        right: 100%;
+      }
+    }
+    
+    .btn span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, #289bb8);
+      animation: btn-anim4 1s linear infinite;
+      animation-delay: .75s
+    }
+    
+    @keyframes btn-anim4 {
+      0% {
+        bottom: -100%;
+      }
+      50%,100% {
+        bottom: 100%;
+      }
+    }
+    
+
+
+</style>
+<script>
+  function valid() 
+    {  
+      let  a=document.getElementById("em").value;
+      let  b=document.getElementById("pw").value;
+      
+      const re=new RegExp("^[a-zA-Z0-9][a-zA-Z0-9/@/#/$/&/*/.]{7,}$");
+     
+      const re1=new RegExp("^[a-zA-Z][a-zA-Z0-9/@/#/$/&/*]{7,}$");
+      const re2=new RegExp("[*/@/$/&/*/#]{1,}");
+      const re3=new RegExp("[0-9]{1,}");
+      const re4=new RegExp("[A-Z]{1,}");
+      const re5=new RegExp("[a-z]{1,}");
+      if(re.test(a) && re1.test(b) && re2.test(b) && re3.test(b)&& re4.test(b)&& re5.test(b))
+      {
+        return(true);    
+      }
+      else
+      {
+       window.alert("Invalid username password!!"+ a+""+ b);
+       return(false);
+      }
+    }    
+</script> 
+
+
+
+</body>
+</html>
+
